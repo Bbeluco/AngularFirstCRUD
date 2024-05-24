@@ -11,6 +11,9 @@
             formControlName="conteudo"
             placeholder="Digite o pensamento"
         >
+        <div class="mensagem__erro" *ngIf="this.formulario.get('conteudo')?.errors?.['required'] && this.formulario.get('conteudo')?.touched">
+            Conteudo eh um campo obrigatorio
+        </div>
         <label for="autoria">Autoria ou fonte</label>
         <input
             type="text"
@@ -19,6 +22,15 @@
             formControlName="autoria"
             placeholder="Digite a autoria ou fonte"
         >
+        <div class="mensagem__erro" *ngIf="this.formulario.get('autoria')?.errors?.['required'] && this.formulario.get('autoria')?.touched">
+            Autoria eh um campo obrigatorio
+        </div>
+        <div class="mensagem__erro" *ngIf="this.formulario.get('autoria')?.errors?.['minLength'] && this.formulario.get('autoria')?.touched">
+            Autoria deve conter no minimo 3 caracteres
+        </div>
+        <div class="mensagem__erro" *ngIf="this.formulario.get('autoria')?.errors?.['minusculo'] && this.formulario.get('autoria')?.touched">
+            Autoria deve conter apenas letras minusculas
+        </div>
         <label for="modelo">Selecione o modelo do card:</label>
         <div class="container-radio">
             <div class="radio-modelo">
@@ -83,7 +95,7 @@
             </div>
         </div>
         <div class="acoes">
-            <button (click)="criarPensamento()" class="botao">Salvar</button>
+            <button (click)="criarPensamento()" [disabled]="!formulario.valid" [ngClass]="habilitarBotao()">Salvar</button>
             <button routerLink="/listarPensamento" class="botao">Cancelar</button>
         </div>
     </form>
