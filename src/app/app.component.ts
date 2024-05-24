@@ -5,7 +5,6 @@ import { RodapeComponent } from './rodape/rodape.component'
 import { CriarPensamentoComponent } from './componentes/pensamentos/criar-pensamento/criar-pensamento.component'
 import { ListarPensamentosComponent } from './componentes/listar-pensamentos/listar-pensamentos.component';
 
-
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -14,7 +13,7 @@ import { ListarPensamentosComponent } from './componentes/listar-pensamentos/lis
     RodapeComponent,
     CriarPensamentoComponent,
     CabecalhoComponent,
-    ListarPensamentosComponent
+    ListarPensamentosComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

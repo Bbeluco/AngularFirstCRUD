@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { PensamentoComponent } from '../../components/pensamento/pensamento.component';
 import { CommonModule } from '@angular/common';
+import { IPensamento } from '../../pensamento';
+import { PensamentoService } from '../../components/pensamento.service';
 
 @Component({
   selector: 'app-listar-pensamentos',
@@ -9,22 +11,19 @@ import { CommonModule } from '@angular/common';
   imports: [
     RouterModule, 
     PensamentoComponent,
-    CommonModule
+    CommonModule,
   ],
   templateUrl: './listar-pensamentos.component.html',
   styleUrl: './listar-pensamentos.component.css'
 })
-export class ListarPensamentosComponent {
-  listaPensamentos = [
-    {
-      conteudo: "Repasse de props no angular",
-      autoria: "Componente pai",
-      modelo: "modelo1"
-    },
-    {
-      conteudo: "Bem escalavel, cada componente nasce com seu suas proprias 'props'",
-      autoria: "Componente filho",
-      modelo: "modelo2"
-    }
-  ];
+export class ListarPensamentosComponent implements OnInit {
+  listaPensamentos: IPensamento[] = [];
+
+  constructor(private service: PensamentoService) {}
+
+  ngOnInit(): void {
+    this.service.listar().subscribe(listaPensamentos => {
+      this.listaPensamentos = listaPensamentos;
+    });
+  }
 }
