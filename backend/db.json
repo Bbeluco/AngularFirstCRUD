@@ -4,102 +4,106 @@
       "id": 1,
       "conteudo": "Primeiro conteudo",
       "autoria": "Bbeluco",
-      "modelo": "modelo1"
+      "modelo": "modelo1",
+      "favorito": false
     },
     {
       "id": 2,
       "conteudo": "Segundo conteudo",
       "autoria": "BBB",
-      "modelo": "modelo2"
+      "modelo": "modelo2",
+      "favorito": false
     },
     {
       "id": 3,
       "conteudo": "Terceiro conteudo",
       "autoria": "AAAB",
-      "modelo": "modelo3"
+      "modelo": "modelo3",
+      "favorito": false
     },
     {
       "conteudo": "AAAAAAAAAAa",
       "autoria": "BBB",
       "modelo": "modelo1",
+      "favorito": false,
       "id": 4
     },
     {
       "conteudo": "AAAAAAA",
       "autoria": "asdasdaAAA",
       "modelo": "modelo1",
+      "favorito": false,
       "id": 5
-    }
-    ,
+    },
     {
       "conteudo": "AAAAAAA",
       "autoria": "asdasdaAAA",
       "modelo": "modelo1",
+      "favorito": false,
       "id": 5
-    }
-    ,
+    },
     {
       "conteudo": "AAAAAAA",
       "autoria": "asdasdaAAA",
       "modelo": "modelo1",
+      "favorito": false,
       "id": 5
-    }
-    ,
+    },
     {
       "conteudo": "AAAAAAA",
       "autoria": "asdasdaAAA",
       "modelo": "modelo1",
+      "favorito": false,
       "id": 5
-    }
-    ,
+    },
     {
       "conteudo": "AAAAAAA",
       "autoria": "asdasdaAAA",
       "modelo": "modelo1",
+      "favorito": false,
       "id": 5
-    }
-    ,
+    },
     {
       "conteudo": "AAAAAAA",
       "autoria": "asdasdaAAA",
       "modelo": "modelo1",
+      "favorito": false,
       "id": 5
-    }
-    ,
+    },
     {
       "conteudo": "AAAAAAA",
       "autoria": "asdasdaAAA",
       "modelo": "modelo1",
+      "favorito": false,
       "id": 5
-    }
-    ,
+    },
     {
       "conteudo": "AAAAAAA",
       "autoria": "asdasdaAAA",
       "modelo": "modelo1",
+      "favorito": false,
       "id": 5
-    }
-    ,
+    },
     {
       "conteudo": "AAAAAAA",
       "autoria": "asdasdaAAA",
       "modelo": "modelo1",
+      "favorito": false,
       "id": 5
-    }
-    ,
+    },
     {
       "conteudo": "AAAAAAA",
       "autoria": "asdasdaAAA",
       "modelo": "modelo1",
+      "favorito": false,
       "id": 5
-    }
-    ,
+    },
     {
       "conteudo": "AAAAAAA",
       "autoria": "asdasdaAAA",
       "modelo": "modelo1",
+      "favorito": false,
       "id": 5
     }
-    
   ]
 }
