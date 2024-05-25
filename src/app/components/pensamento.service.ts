@@ -19,11 +19,18 @@ export class PensamentoService {
   }
 
   listar(pagina: number) {
-
     let itensPorPagina = 6;
     let params = new HttpParams().set("_page", pagina).set("_limit", itensPorPagina)
 
     return this.http.get<IPensamento[]>(this.API, { params });
+  }
+
+  listarPensamentosFavoritados(pagina: number) {
+    let itensPorPagina = 6;
+    let params = new HttpParams().set("_page", pagina).set("_limit", itensPorPagina).set("favorito", true);
+
+    console.log(params);
+    return this.http.get<IPensamento[]>(this.API, { params })
   }
 
   criar(pensamento: IPensamento) {

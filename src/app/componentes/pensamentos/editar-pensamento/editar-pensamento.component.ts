@@ -27,6 +27,7 @@ export class EditarPensamentoComponent implements OnInit{
     const id = this.route.snapshot.paramMap.get("id");
     this.service.buscarId(id!).subscribe(pensamento => {
       this.formulario = this.formBuilder.group({
+        id: id,
         conteudo: [pensamento.conteudo, Validators.compose([
           Validators.required,
           Validators.pattern(/(.|\s)*\S(.|\s)*/)

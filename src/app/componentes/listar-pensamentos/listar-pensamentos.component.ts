@@ -43,6 +43,13 @@ export class ListarPensamentosComponent implements OnInit {
     });
   }
 
+  carregarPensamentosFavoritados() {
+    this.paginaAtual = 1;
+    this.service.listarPensamentosFavoritados(this.paginaAtual).subscribe((listaPensamentos) => {
+      this.listaPensamentos = listaPensamentos;
+    })
+  }
+
   buscarPorAutor() {
     this.service.buscarPorAutor(this.filtro).subscribe((listaPensamentos) => {
       this.listaPensamentos = listaPensamentos;
