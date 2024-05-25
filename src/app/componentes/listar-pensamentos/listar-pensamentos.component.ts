@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { IPensamento } from '../../pensamento';
 import { PensamentoService } from '../../components/pensamento.service';
 import { BotaoCarregarMaisComponent } from './botao-carregar-mais/botao-carregar-mais.component';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-listar-pensamentos',
@@ -13,7 +14,8 @@ import { BotaoCarregarMaisComponent } from './botao-carregar-mais/botao-carregar
     RouterModule, 
     PensamentoComponent,
     CommonModule,
-    BotaoCarregarMaisComponent
+    BotaoCarregarMaisComponent,
+    FormsModule
   ],
   templateUrl: './listar-pensamentos.component.html',
   styleUrl: './listar-pensamentos.component.css'
@@ -22,6 +24,7 @@ export class ListarPensamentosComponent implements OnInit {
   listaPensamentos: IPensamento[] = [];
   paginaAtual: number = 1;
   haMaisPensamentos: boolean = true;
+  filtro: string = "";
 
   constructor(private service: PensamentoService) {}
 
@@ -38,5 +41,11 @@ export class ListarPensamentosComponent implements OnInit {
         this.haMaisPensamentos = false;
       }
     });
+  }
+
+  buscarPorAutor() {
+    this.service.buscarPorAutor(this.filtro).subscribe((listaPensamentos) => {
+      this.listaPensamentos = listaPensamentos;
+    })
   }
 }

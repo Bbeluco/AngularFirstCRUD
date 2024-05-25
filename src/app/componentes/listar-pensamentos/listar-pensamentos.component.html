@@ -1,5 +1,15 @@
 <section class="containter">
     <header class="header d-flex">
+        <div class="buscar-pensamentos">
+            <input 
+                type="search" 
+                class="filtro" 
+                placeholder="O que voce procura?" 
+                autofocus
+                [(ngModel)]="filtro"
+                (keyup)="buscarPorAutor()"
+            >
+        </div>
         <h2 class="ff-inter">Meu mural</h2>
         <button routerLink="/criarPensamento" class="botao">Adicionar pensamento</button>
     </header>

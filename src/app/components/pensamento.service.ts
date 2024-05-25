@@ -10,6 +10,10 @@ export class PensamentoService {
   private readonly API: string = "http://localhost:3000/pensamentos"
   constructor(private http: HttpClient) { }
 
+  buscarPorAutor(autoria: string): Observable<IPensamento[]> {
+    return this.http.get<IPensamento[]>(`${this.API}?q=${autoria}`)
+  }
+
   buscarId(id: string): Observable<IPensamento> {
     return this.http.get<IPensamento>(`${this.API}/${id}`);
   }
